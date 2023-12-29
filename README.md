@@ -50,3 +50,11 @@ After compiling the project, you can run the executable to simulate the ECommerc
 👩‍💻 Contributions Welcome: 
 
 We invite developers of all levels to contribute to this project, whether it's adding new features, improving existing code, or fixing bugs.
+
+### Model
+
+- the first idea:
+![image](https://github.com/jhowilbur/ecommerce-cpp-backend/assets/59379254/4c7e63c4-4ca8-4040-9190-9cc10db8909f)
+
+## Authors
+- Wilbur [@jhowilbur](github.com/jhowilbur)
