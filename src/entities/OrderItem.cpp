@@ -4,37 +4,41 @@
 
 #include "entities/OrderItem.h"
 
-OrderItem::OrderItem(int itemID, int ordID, int prodID, int qty)
-        : orderItemID(itemID), orderID(ordID), productID(prodID), quantity(qty) {}
+namespace ECommerceSystem::Entities {
 
-int OrderItem::getOrderItemID() const {
-    return orderItemID;
-}
+    OrderItem::OrderItem(int itemID, int ordID, int prodID, int qty)
+            : orderItemID(itemID), orderID(ordID), productID(prodID), quantity(qty) {}
 
-void OrderItem::setOrderItemID(int itemID) {
-    orderItemID = itemID;
-}
+    int OrderItem::getOrderItemID() const {
+        return orderItemID;
+    }
 
-int OrderItem::getOrderID() const {
-    return orderID;
-}
+    void OrderItem::setOrderItemID(int itemID) {
+        orderItemID = itemID;
+    }
 
-void OrderItem::setOrderID(int ordID) {
-    orderID = ordID;
-}
+    int OrderItem::getOrderID() const {
+        return orderID;
+    }
 
-int OrderItem::getProductID() const {
-    return productID;
-}
+    void OrderItem::setOrderID(int ordID) {
+        orderID = ordID;
+    }
 
-void OrderItem::setProductID(int prodID) {
-    productID = prodID;
-}
+    int OrderItem::getProductID() const {
+        return productID;
+    }
 
-int OrderItem::getQuantity() const {
-    return quantity;
-}
+    void OrderItem::setProductID(int prodID) {
+        productID = prodID;
+    }
 
-void OrderItem::setQuantity(int qty) {
-    quantity = qty;
-}
+    int OrderItem::getQuantity() const {
+        return quantity;
+    }
+
+    void OrderItem::setQuantity(int qty) {
+        quantity = qty;
+    }
+
+} // namespace ECommerceSystem::Entities

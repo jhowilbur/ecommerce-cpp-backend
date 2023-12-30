@@ -10,36 +10,40 @@
 #include "Poco/UUID.h"
 #include "Order.h"
 
-class User {
-private:
-    Poco::UUID userId;
-    std::string name;
-    std::string phone;
-    std::string email;
-    std::string password;
-    std::vector<Order> orders;
+namespace ECommerceSystem::Entities {
 
-public:
-    User(std::string name, std::string phone, std::string email, std::string password);
+    class User {
+        private:
+            Poco::UUID userId;
+            std::string name;
+            std::string phone;
+            std::string email;
+            std::string password;
+            std::vector<Order> orders;
 
-    Poco::UUID getUserId() const;
-    void setUserId(const Poco::UUID& userId);
+        public:
+            User(std::string name, std::string phone, std::string email, std::string password);
 
-    std::string getName() const;
-    void setName(const std::string& name);
+            Poco::UUID getUserId() const;
+            void setUserId(const Poco::UUID& userId);
 
-    std::string getPhone() const;
-    void setPhone(const std::string& phone);
+            std::string getName() const;
+            void setName(const std::string& name);
 
-    std::string getEmail() const;
-    void setEmail(const std::string& email);
+            std::string getPhone() const;
+            void setPhone(const std::string& phone);
 
-    std::string getPassword() const;
-    void setPassword(const std::string& password);
+            std::string getEmail() const;
+            void setEmail(const std::string& email);
 
-    const std::vector<Order>& getOrders() const;
-    void removeOrder(const Order& order);
-    void placeOrder(const Order& order);
-};
+            std::string getPassword() const;
+            void setPassword(const std::string& password);
+
+            const std::vector<Order>& getOrders() const;
+            void removeOrder(const Order& order);
+            void placeOrder(const Order& order);
+    };
+
+} // namespace ECommerceSystem::Entities
 
 #endif //USER_H

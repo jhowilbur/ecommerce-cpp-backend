@@ -13,45 +13,49 @@
 #include "Payment.h"
 #include "ShippingDetails.h"
 
-class Order {
-private:
-    int orderID;
-    Poco::UUID userID;
-    std::time_t orderDate;
-    std::string status;
-    std::vector<OrderItem> orderItems;
-    Payment payment;
-    ShippingDetails shippingDetails;
+namespace ECommerceSystem::Entities {
 
-public:
-    Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status);
+    class Order {
+    private:
+        int orderID;
+        Poco::UUID userID;
+        std::time_t orderDate;
+        std::string status;
+        std::vector<OrderItem> orderItems;
+        Payment payment;
+        ShippingDetails shippingDetails;
 
-    int getOrderID() const;
-    void setOrderID(int orderId);
+    public:
+        Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status);
 
-    Poco::UUID getUserID() const;
-    void setUserID(const Poco::UUID& userId);
+        int getOrderID() const;
+        void setOrderID(int orderId);
 
-    std::time_t getOrderDate() const;
-    void setOrderDate(std::time_t orderDate);
+        Poco::UUID getUserID() const;
+        void setUserID(const Poco::UUID& userId);
 
-    std::string getStatus() const;
-    void setStatus(const std::string &status);
+        std::time_t getOrderDate() const;
+        void setOrderDate(std::time_t orderDate);
 
-    const std::vector<OrderItem>& getOrderItems() const;
-    void addOrderItem(const OrderItem &item);
-    void removeOrderItem(const OrderItem &item);
+        std::string getStatus() const;
+        void setStatus(const std::string &status);
 
-    void setPayment(const Payment &payment);
-    Payment getPayment() const;
+        const std::vector<OrderItem>& getOrderItems() const;
+        void addOrderItem(const OrderItem &item);
+        void removeOrderItem(const OrderItem &item);
 
-    void setShippingDetails(const ShippingDetails &details);
-    ShippingDetails getShippingDetails() const;
+        void setPayment(const Payment &payment);
+        Payment getPayment() const;
 
-    bool operator==(const Order& other) const {
-        return orderID == other.orderID;
-    }
-};
+        void setShippingDetails(const ShippingDetails &details);
+        ShippingDetails getShippingDetails() const;
+
+        bool operator==(const Order& other) const {
+            return orderID == other.orderID;
+        }
+    };
+
+} // namespace ECommerceSystem::Entities
 
 #endif // ORDER_H
 

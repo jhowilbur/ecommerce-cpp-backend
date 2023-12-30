@@ -5,31 +5,35 @@
 #ifndef ORDERITEM_H
 #define ORDERITEM_H
 
-class OrderItem {
-private:
-    int orderItemID;
-    int orderID;
-    int productID;
-    int quantity;
+namespace ECommerceSystem::Entities {
 
-public:
-    OrderItem(int itemID, int orderID, int productID, int quantity);
+    class OrderItem {
+        private:
+            int orderItemID;
+            int orderID;
+            int productID;
+            int quantity;
 
-    int getOrderItemID() const;
-    void setOrderItemID(int itemID);
+        public:
+            OrderItem(int itemID, int orderID, int productID, int quantity);
 
-    int getOrderID() const;
-    void setOrderID(int orderID);
+            int getOrderItemID() const;
+            void setOrderItemID(int itemID);
 
-    int getProductID() const;
-    void setProductID(int productID);
+            int getOrderID() const;
+            void setOrderID(int orderID);
 
-    int getQuantity() const;
-    void setQuantity(int quantity);
+            int getProductID() const;
+            void setProductID(int productID);
 
-    bool operator==(const OrderItem& other) const {
-        return this->orderItemID == other.orderItemID;  // Example comparison
-    }
-};
+            int getQuantity() const;
+            void setQuantity(int quantity);
+
+            bool operator==(const OrderItem& other) const {
+                return this->orderItemID == other.orderItemID;  // Example comparison
+            }
+    };
+
+} // namespace ECommerceSystem::Entities
 
 #endif // ORDERITEM_H

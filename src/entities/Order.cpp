@@ -6,65 +6,69 @@
 #include "Poco/UUID.h"
 #include <algorithm>
 
-Order::Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status)
-        : orderID(orderId), userID(userId), orderDate(orderDate), status(std::move(status)) {}
+namespace ECommerceSystem::Entities {
 
-int Order::getOrderID() const {
-    return orderID;
-}
+    Order::Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status)
+            : orderID(orderId), userID(userId), orderDate(orderDate), status(std::move(status)) {}
 
-void Order::setOrderID(int orderId) {
-    orderID = orderId;
-}
+    int Order::getOrderID() const {
+        return orderID;
+    }
 
-Poco::UUID Order::getUserID() const {
-    return userID;
-}
+    void Order::setOrderID(int orderId) {
+        orderID = orderId;
+    }
 
-void Order::setUserID(const Poco::UUID& userId) {
-    userID = userId;
-}
+    Poco::UUID Order::getUserID() const {
+        return userID;
+    }
 
-std::time_t Order::getOrderDate() const {
-    return orderDate;
-}
+    void Order::setUserID(const Poco::UUID& userId) {
+        userID = userId;
+    }
 
-void Order::setOrderDate(std::time_t orderDate) {
-    this->orderDate = orderDate;
-}
+    std::time_t Order::getOrderDate() const {
+        return orderDate;
+    }
 
-std::string Order::getStatus() const {
-    return status;
-}
+    void Order::setOrderDate(std::time_t orderDate) {
+        this->orderDate = orderDate;
+    }
 
-void Order::setStatus(const std::string &status) {
-    this->status = status;
-}
+    std::string Order::getStatus() const {
+        return status;
+    }
 
-const std::vector<OrderItem>& Order::getOrderItems() const {
-    return orderItems;
-}
+    void Order::setStatus(const std::string &status) {
+        this->status = status;
+    }
 
-void Order::addOrderItem(const OrderItem &item) {
-    orderItems.push_back(item);
-}
+    const std::vector<OrderItem>& Order::getOrderItems() const {
+        return orderItems;
+    }
 
-void Order::removeOrderItem(const OrderItem &item) {
-    orderItems.erase(std::remove(orderItems.begin(), orderItems.end(), item), orderItems.end());
-}
+    void Order::addOrderItem(const OrderItem &item) {
+        orderItems.push_back(item);
+    }
 
-void Order::setPayment(const Payment &payment) {
-    this->payment = payment;
-}
+    void Order::removeOrderItem(const OrderItem &item) {
+        orderItems.erase(std::remove(orderItems.begin(), orderItems.end(), item), orderItems.end());
+    }
 
-Payment Order::getPayment() const {
-    return payment;
-}
+    void Order::setPayment(const Payment &payment) {
+        this->payment = payment;
+    }
 
-void Order::setShippingDetails(const ShippingDetails &details) {
-    this->shippingDetails = details;
-}
+    Payment Order::getPayment() const {
+        return payment;
+    }
 
-ShippingDetails Order::getShippingDetails() const {
-    return shippingDetails;
-}
+    void Order::setShippingDetails(const ShippingDetails &details) {
+        this->shippingDetails = details;
+    }
+
+    ShippingDetails Order::getShippingDetails() const {
+        return shippingDetails;
+    }
+
+} // namespace ECommerceSystem::Entities
