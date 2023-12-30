@@ -26,7 +26,7 @@ namespace ECommerceSystem::Entities {
         ShippingDetails shippingDetails;
 
     public:
-        Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status);
+        Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status, const Payment& payment, ShippingDetails  shippingDetails);
 
         int getOrderID() const;
         void setOrderID(int orderId);

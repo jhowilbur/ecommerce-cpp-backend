@@ -5,11 +5,12 @@
 #include "entities/Order.h"
 #include "Poco/UUID.h"
 #include <algorithm>
+#include <utility>
 
 namespace ECommerceSystem::Entities {
 
-    Order::Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status)
-            : orderID(orderId), userID(userId), orderDate(orderDate), status(std::move(status)) {}
+    Order::Order(int orderId, const Poco::UUID& userId, std::time_t orderDate, std::string status, const Payment& payment, ShippingDetails  shippingDetails)
+            : orderID(orderId), userID(userId), orderDate(orderDate), status(std::move(status)), payment(payment), shippingDetails(std::move(shippingDetails)) {}
 
     int Order::getOrderID() const {
         return orderID;

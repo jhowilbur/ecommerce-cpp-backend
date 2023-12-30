@@ -8,33 +8,33 @@
 
 #include <string>
 
-namespace ECommerceSystem {
-    namespace Entities {
 
-        class ShippingDetails {
-        private:
-            int shippingID;
-            int orderID;
-            std::string address;
-            std::string deliveryStatus;
+namespace ECommerceSystem::Entities {
 
-        public:
-            ShippingDetails(int shippingID, int orderID, std::string  address, std::string  deliveryStatus);
+    class ShippingDetails {
+    private:
+        int shippingID;
+        int orderID;
+        std::string address;
+        std::string deliveryStatus;
 
-            int getShippingID() const;
-            void setShippingID(int shippingID);
+    public:
+        ShippingDetails(int shippingID, int orderID, std::string  address, std::string  deliveryStatus);
 
-            int getOrderID() const;
-            void setOrderID(int orderID);
+        int getShippingID() const;
+        void setShippingID(int shippingID);
 
-            std::string getAddress() const;
-            void setAddress(const std::string& address);
+        int getOrderID() const;
+        void setOrderID(int orderID);
 
-            std::string getDeliveryStatus() const;
-            void setDeliveryStatus(const std::string& deliveryStatus);
-        };
+        std::string getAddress() const;
+        void setAddress(const std::string& address);
 
-    } // namespace Entities
-} // namespace ECommerceSystem
+        std::string getDeliveryStatus() const;
+        void setDeliveryStatus(const std::string& deliveryStatus);
+    };
+
+} // namespace ECommerceSystem::Entities
+
 
 #endif // SHIPPINGDETAILS_H

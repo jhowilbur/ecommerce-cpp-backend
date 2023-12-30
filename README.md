@@ -29,8 +29,8 @@ This project is designed to demonstrate clean code practices and efficient proje
 ### Building the Project
 
 - The project can be built using CMake
-- To build the project, run `mkdir cmake-build && cd cmake-build && cmake ..` in the root directory (where CMakeLists.txt is located)
-- Then run `make` to compile the project
+- To build the project, run the following commands:
+`mkdir cmake-build && cd cmake-build && cmake .. && cmake build .`
 
 ## Usage
 
